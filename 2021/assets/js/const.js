@@ -1,21 +1,14 @@
 // Essentially just the setup of the SVG and chart sizes.
-const svgHeight = '80%';
-const svgWidth = '80%';
-const chartHeight = '100%';
-const chartWidth = '100%';
+const svgHeight = 700;
+const svgWidth = 700;
 const margin = { top:20, right:40, bottom:80, left:100 };
+const chartHeight = svgHeight - (margin.top + margin.bottom);
+const chartWidth = svgWidth - (margin.left + margin.right);
 
 // Transition stuff.
-const duration = 1000;
+const duration = 1500;
 
 // Adding the SVG and chart to the HTML.
-// SVG Div
-const svgDiv = d3 
-    .select('body')
-    .append('div')
-    .attr('height', '100%')
-    .attr('width','100%')
-    .attr('id','#scatter');
 // SVG
 const svg = d3 
     .select('#scatter')

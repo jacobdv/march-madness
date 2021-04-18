@@ -12,8 +12,8 @@ function xSetUp(data, xVariable) {
 function ySetUp(data, yVariable) {
     const yScale = d3 
         .scaleLinear()
-        .domain([d3.min(data, d => d[xVariable]) * 0.8,
-             d3.max(data, d => d[xVariable]) * 1.2])
+        .domain([d3.min(data, d => d[yVariable]) * 0.8,
+             d3.max(data, d => d[yVariable]) * 1.2])
         .range([chartHeight, 0]);
     return yScale;
 };
@@ -35,6 +35,7 @@ function renderYAxis(yNewSetUp, yAxis) {
         .transition()
         .duration(duration)
         .call(leftAxis);
+    return yAxis;
 };
 // Circles.
 function renderCircles(circlesGroup, xNewSetUp, yNewSetUp, xVariable, yVariable) {
